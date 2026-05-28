@@ -1,0 +1,6 @@
+{
+  "name": "OTP Authentication System",
+  "description": "A full-stack Node.js backend and React client for verifying logins via email OTPs, integrating Supabase for database profiles and Resend for passcode emails.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
