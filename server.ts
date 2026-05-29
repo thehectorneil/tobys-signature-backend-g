@@ -659,6 +659,11 @@ app.get("/api/auth/me", async (req, res) => {
 
 // Serve frontend build SPA assets
 async function bootstrap() {
+  // If running in serverless environment (like Vercel production), routing of static files is handled by vercel.json
+  if (process.env.VERCEL) {
+    return;
+  }
+
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -681,3 +686,5 @@ async function bootstrap() {
 bootstrap().catch((err) => {
   console.error("Express startup fail:", err);
 });
+
+export default app;
